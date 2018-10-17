@@ -18,7 +18,7 @@ if [ $(uname) == Linux ]; then
     cd c++
     # For some reason, configure wants $AR to also include the options
     #export AR="$AR cr"
-    ./configure --prefix=$PREFIX --with-sqlite3=$PREFIX
+    ./configure --prefix=$PREFIX --with-sqlite3=$PREFIX || ( cat config.log ; exit 1 )
     make -j2
     mv ReleaseMT/bin/{igblastn,igblastp} $SHARE_DIR/bin/
     mv ReleaseMT/bin/makeblastdb $PREFIX/bin/
