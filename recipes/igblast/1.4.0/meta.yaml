@@ -2,6 +2,8 @@ package:
   name: igblast
   version: "1.4.0"
 source:
+  sha256: ee0f0b00bbdf6e4256099c0115c2eeb4b479a3aa6a5f2b771d29f03e6fe5e827  # [not osx]
+  sha256: 5a43bcb979fc196485001be94550a488b37f16ca2f5a86d6e3d52463db17b8b1  # [osx]
   url: ftp://ftp.ncbi.nih.gov/blast/executables/igblast/release/1.4.0/ncbi-igblast-1.4.0-x64-linux.tar.gz  # [not osx]
   url: ftp://ftp.ncbi.nih.gov/blast/executables/igblast/release/1.4.0/ncbi-igblast-1.4.0-universal-macosx.tar.gz  # [osx]
 about:
