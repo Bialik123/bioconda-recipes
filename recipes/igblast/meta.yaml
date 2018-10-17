@@ -20,13 +20,16 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - git
   host:
     - gnu-wget
     - zlib
+    - bzip2
     - sqlite
     - libstdcxx-ng
   run:
     - zlib
+    - bzip2
     - sqlite
     - libstdcxx-ng
     - perl
