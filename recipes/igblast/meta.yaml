@@ -23,10 +23,12 @@ requirements:
   host:
     - gnu-wget
     - zlib
+    - sqlite
     - libstdcxx-ng
   run:
-    - libstdcxx-ng
     - zlib
+    - sqlite
+    - libstdcxx-ng
     - perl
 
 test:
