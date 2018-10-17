@@ -16,6 +16,8 @@ if [ $(uname) == Linux ]; then
     # provide this. See https://github.com/bioconda/bioconda-recipes/pull/3020
 
     cd c++
+    # For some reason, configure wants $AR to also include the options
+    export AR="$AR cr"
     ./configure --prefix=$PREFIX --with-sqlite3=$PREFIX
     make -j2
     mv ReleaseMT/bin/{igblastn,igblastp} $SHARE_DIR/bin/
