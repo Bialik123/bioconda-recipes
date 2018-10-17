@@ -22,7 +22,11 @@ requirements:
     - {{ compiler('c') }}
   host:
     - gnu-wget
+    - zlib
+    - libstdcxx-ng
   run:
+    - libstdcxx-ng
+    - zlib
     - perl
 
 test:
