@@ -19,7 +19,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - patchelf
+    - patchelf  # [linux]
     - gnu-wget
   host:
     - zlib

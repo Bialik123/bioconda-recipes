@@ -6,10 +6,12 @@ SHARE_DIR=$PREFIX/share/igblast
 
 mkdir -p $PREFIX/bin
 
-# The binaries want libbz2.so.1, but the correct soname is libbz2.so.1.0
-for name in makeblastdb igblastn igblastp; do
-  patchelf --replace-needed libbz2.so.1 libbz2.so.1.0 bin/$name
-done
+if [ $(uname) == Linux ]; then
+  # The binaries want libbz2.so.1, but the correct soname is libbz2.so.1.0
+  for name in makeblastdb igblastn igblastp; do
+    patchelf --replace-needed libbz2.so.1 libbz2.so.1.0 bin/$name
+  done
+fi
 
 # $SHARE_DIR contains the actual igblastn and igblastp binaries and also the
 # required data files. Wrappers will be installed into $PREFIX/bin that set
