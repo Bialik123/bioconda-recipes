@@ -32,6 +32,7 @@ requirements:
     - libidn11
     - libxml2
     - perl
+    - gnutls  # [osx]
 test:
   commands:
     - igblastn -h
